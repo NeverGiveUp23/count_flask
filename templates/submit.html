@@ -17,23 +17,24 @@
       <tbody>
         <tr>
           <th scope="row">Name:</th>
-          <td>{{name}}</td>
+          <td>{{session['username']}}</td>
         </tr>
         <tr>
           <th scope="row">Location:</th>
-          <td>{{location}}</td>
+          <td>{{session['userlocation']}}</td>
         </tr>
         <tr>
           <th scope="row">Language:</th>
-          <td>{{language}}</td>
+          <td>{{session['userlanguage']}}</td>
         </tr>
         <tr>
           <th scope="row">Comment:</th>
-          <td>{{comments}}</td>
+          <td>{{session['usercomments']}}</td>
         </tr>
       </tbody>
     </table>
     <button type="submit" class="btn btn-primary btn-sm"><a href="/"  class="btn btn-primary btn-sm">Go Back</a></button>
+    
   </div>
 </body>
 </html>

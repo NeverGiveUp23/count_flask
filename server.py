@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template,request,redirect  # Import Flask to allow us to create our app
+from flask import Flask, render_template,request,redirect, session  # Import Flask to allow us to create our app
 
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 app.secret_key = 'Hello'
@@ -10,11 +10,16 @@ def index():
 
 @app.route('/submit', methods=['POST'])         
 def checkout():
-    name = request.form['name']
-    language = request.form['language']
-    location = request.form['location']
-    comments = request.form['comments']
-    return render_template("submit.html", name = name, language = language, location = location, comments = comments)
+    session['username'] = request.form['name']
+    session['userlocation'] = request.form['location']
+    session['userlanguage'] = request.form['language']
+    session['usercomments'] = request.form['comments']
+    return redirect("/user")
+  
+@app.route('/user')
+def user():
+  return render_template('submit.html')
+  
 
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
