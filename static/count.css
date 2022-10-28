@@ -1,0 +1,12 @@
+#info{
+  width: 600px;
+  height: 500px;
+  margin:  0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#infoUser{
+  align-items: center;
+  margin-top: 50px;
+}
